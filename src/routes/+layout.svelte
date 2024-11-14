@@ -1,36 +1,11 @@
 <script>
 	import '../app.css';
-	import { IconMusic } from '@tabler/icons-svelte';
+	import Header from '$lib/Header.svelte';
 	let { children } = $props();
 </script>
 
-<div class="flex flex-col min-h-screen">
-	<header class="px-4 lg:px-6 h-14 flex items-center">
-        <a class="flex items-center justify-center" href="/">
-            <IconMusic class="h-6 w-6 mr-2" />
-            <span class="font-bold text-lg">Repertoire</span>
-        </a>
-        <nav class="ml-auto flex gap-4 sm:gap-6">
-            <a
-                class="text-sm font-medium hover:underline underline-offset-4"
-                href="#funcionalidades"
-            >
-                Funcionalidades
-            </a>
-            <a
-                class="text-sm font-medium hover:underline underline-offset-4"
-                href="#precos"
-            >
-                Preços
-            </a>
-            <a
-                class="text-sm font-medium hover:underline underline-offset-4"
-                href="#footer"
-            >
-                Sobre
-            </a>
-        </nav>
-    </header>
+<div class="flex flex-col min-h-screen items-center">
+    <Header></Header>
 
 	{@render children()}
 
@@ -50,3 +25,31 @@
         </nav>
     </footer>
 </div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+    :global(html) {
+        font-family: "Familjen Grotesk", sans-serif;
+    }
+
+    :global(h1::selection) {
+        background-color: #9333ea;
+    }
+
+    :global(h2::selection) {
+        background-color: #9333ea;
+    }
+
+    :global(h3::selection) {
+        background-color: #9333ea;
+    }
+
+    :global(p::selection) {
+        background-color: #9333ea;
+    }
+
+    :global(span::selection) {
+        background-color: #9333ea;
+    }
+</style>
