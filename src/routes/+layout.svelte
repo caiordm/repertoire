@@ -9,7 +9,7 @@
 
 	{@render children()}
 
-	<footer
+	<footer id="footer"
         class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t"
     >
         <p class="text-xs text-gray-500">
@@ -31,6 +31,7 @@
 
     :global(html) {
         font-family: "Familjen Grotesk", sans-serif;
+        scroll-behavior: smooth;
     }
 
     :global(h1::selection) {

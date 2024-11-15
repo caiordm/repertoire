@@ -30,15 +30,15 @@
                     </p>
                 </div>
                 <div class="flex flex-col gap-2 min-[400px]:flex-row">
-                    <button
-                        class="px-4 py-3 bg-purple-700 text-white font-medium rounded-lg animate-pulse"
-                        >Comece Grátis</button
+                    <a href="/login"
+                        class="px-8 py-3 bg-purple-700 text-white text-center font-medium rounded-lg animate-pulse"
+                        >Comece Grátis</a
                     >
-                    <button
-                        class="px-4 py-3 bg-white text-zinc-900 font-medium border border-zinc-300 rounded-lg"
+                    <a href="/saiba-mais"
+                        class="px-8 py-3 bg-white text-zinc-900 text-center font-medium border border-zinc-300 rounded-lg"
                     >
                         Saiba Mais
-                    </button>
+                    </a>
                 </div>
             </div>
             <img
@@ -147,15 +147,15 @@
             Repertoire para gerenciar seus setlists.
         </p>
         <form class="flex space-x-2">
-            <input
+            <!-- <input
                 class="max-w-lg flex-1 px-4 py-3 bg-white text-zinc-900 border border-zinc-300 rounded-lg outline-none"
                 placeholder="Digite seu email"
                 type="email"
-            />
-            <button
-                type="submit"
-                class="px-4 py-3 bg-white text-purple-600 rounded-lg font-bold"
-                >Enviar</button
+            /> -->
+            <a
+                href="/login"
+                class="px-12 py-3 bg-white text-purple-600 rounded-lg font-bold"
+                >Comece Grátis</a
             >
         </form>
         <p class="text-xs text-gray-200">

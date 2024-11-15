@@ -6,34 +6,44 @@
     let open = $state(false);
 </script>
 
-<header class="fixed z-50 mt-4 w-11/12 px-4 lg:px-6 h-16 flex items-center justify-between bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 border border-gray-100 rounded-2xl">
+<header
+    class="fixed z-50 mt-4 w-11/12 px-4 lg:px-6 h-16 text-lg flex items-center justify-between bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-80 border border-gray-50 rounded-2xl"
+>
     <a class="flex items-center justify-center" href="/">
         <IconMusic class="h-6 w-6 mr-2" />
-        <span class="font-bold text-lg">Repertoire</span>
+        <span class="font-bold text-lg lg:text-xl">Repertoire</span>
     </a>
 
     <nav class="flex gap-[0.4rem] sm:gap-6">
         <a
-            class="text-sm font-medium hover:underline underline-offset-4"
+            class="font-medium hover:underline underline-offset-4"
             href="#funcionalidades"
         >
             Funcionalidades
         </a>
         <a
-            class="text-sm font-medium hover:underline underline-offset-4"
-            href="#precos"
+            class="font-medium hover:underline underline-offset-4"
+            href="#como-funciona"
         >
-            Preços
+            Como Funciona
         </a>
         <a
-            class="text-sm font-medium hover:underline underline-offset-4"
+            class="font-medium hover:underline underline-offset-4"
             href="#footer"
         >
             Sobre
         </a>
     </nav>
 
+    <a href="/login" class="hidden lg:block px-6 py-2 bg-purple-700 text-white font-medium rounded-lg"
+        >Entrar</a
+    >
+    
     <div class="hamburguer-icon">
+        <a href="/login" class="px-6 py-2 text-base bg-purple-700 text-white font-medium rounded-lg"
+            >Entrar</a
+        >
+        
         <Hamburger
             class="hamburguer-icon"
             title="Toggle nav links"
@@ -50,32 +60,10 @@
 <MenuHamburguer class="hamburguer-menu" bind:open />
 
 <style>
-    .hamburguer-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 80%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        transition: 0.3s ease;
-    }
-
     .hamburguer-icon {
         display: none;
         z-index: 1000;
         cursor: pointer;
-        color: wheat;
-    }
-
-    .hamburguer-menu a {
-        color: white;
-        font-size: 24px;
-        margin: 1rem 0;
     }
 
     /* Esconde o menu normal em telas menores */

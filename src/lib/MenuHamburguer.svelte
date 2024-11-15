@@ -4,7 +4,7 @@
 
 
 {#if open}
-    <nav class="absolute z-50 bg-zinc-50 w-full pt-4 pb-8 border-b-2 border-zinc-200 text-zinc-700 flex flex-col items-center gap-4 lg:gap-8 text-lg lg:text-xl font-regular">
+    <nav class="fixed z-40 mt-24 w-11/12 bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90 border border-gray-100 rounded-2xl flex flex-col items-center p-4 gap-4 lg:gap-8 text-lg lg:text-xl font-regular">
         <a
             class="text-sm font-medium hover:underline underline-offset-4"
             href="#funcionalidades"
@@ -13,9 +13,9 @@
         </a>
         <a
             class="text-sm font-medium hover:underline underline-offset-4"
-            href="#precos"
+            href="#como-funciona"
         >
-            Preços
+            Como Funciona
         </a>
         <a
             class="text-sm font-medium hover:underline underline-offset-4"
