@@ -17,10 +17,19 @@
                 <IconMusic class="h-8 w-8 mr-2" />
                 <span class="font-bold text-xl lg:text-xl">Repertoire</span>
             </a>
-            <span class="text-xl"><strong class="text-purple-600">Olá!</strong> Entre na sua conta.</span>
-            <a href="/signup" class="text-purple-900 font-medium">Não tem uma conta ainda? Crie agora.</a>
-            <form class="mt-6 flex flex-col gap-4">
+            <span class="text-xl">Cadastre-se no Repertoire!</span>
+            <a href="/login" class="text-purple-900 font-medium">Caso já tenha uma conta, faça seu login por aqui.</a>
+            <form class="mt-6 flex flex-col gap-3">
 
+                <div class="flex flex-col gap-1">
+                    <label for="name" class="text-md text-purple-800 font-medium">Nome:</label>
+                    <input
+                        class="max-w-full flex-1 px-4 py-2 bg-white text-zinc-900 border border-zinc-300 rounded-lg outline-none"
+                        placeholder="Digite seu nome"
+                        type="text"
+                        name="name"
+                    />
+                </div>
                 <div class="flex flex-col gap-1">
                     <label for="email" class="text-md text-purple-800 font-medium">Email:</label>
                     <input
@@ -43,16 +52,15 @@
                 <button    
                     type="submit"
                     class="px-8 py-2 bg-purple-700 text-white rounded-lg font-bold"
-                    >Entrar
+                    >Cadastrar
                 </button>
             </form>
-            <a href="/forgot-password" class="text-purple-700 font-medium">Esqueceu a senha?</a>
-            
+
         </div>
         <div class="w-full lg:w-2/3 mt-8 lg:mt-0">
             <img
                 alt="Hero"
-                src="https://image.cdn2.seaart.me/2023-11-08/22128187776449541/458ab5ce4d6312eab68799b824ba4f2642e50c0a_high.webp"
+                src="https://img.freepik.com/free-photo/full-shot-ninja-wearing-equipment_23-2150960878.jpg?t=st=1731701555~exp=1731705155~hmac=dba1f8bcdb706d8d07eb6e28de96722c304a33aae8bde6547010dc4f84df2b0d"
                 class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 height="550"
                 width="550"

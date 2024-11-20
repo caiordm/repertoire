@@ -17,42 +17,32 @@
                 <IconMusic class="h-8 w-8 mr-2" />
                 <span class="font-bold text-xl lg:text-xl">Repertoire</span>
             </a>
-            <span class="text-xl"><strong class="text-purple-600">Olá!</strong> Entre na sua conta.</span>
-            <a href="/signup" class="text-purple-900 font-medium">Não tem uma conta ainda? Crie agora.</a>
+            <span class="text-xl"><strong class="text-purple-600">Recupere sua senha.</span>
+            <a href="/login" class="text-purple-900 font-medium">Digite seu email e enviaremos as instruções para recuperar sua senha.</a>
             <form class="mt-6 flex flex-col gap-4">
 
                 <div class="flex flex-col gap-1">
                     <label for="email" class="text-md text-purple-800 font-medium">Email:</label>
                     <input
                         class="max-w-full flex-1 px-4 py-2 bg-white text-zinc-900 border border-zinc-300 rounded-lg outline-none"
-                        placeholder="Digite seu email"
+                        placeholder="Digite seu email aqui"
                         type="email"
                         name="email"
-                    />
-                </div>
-                <div class="flex flex-col gap-1">
-                    <label for="password" class="text-md text-purple-800 font-medium">Senha:</label>
-                    <input
-                        class="max-w-full flex-1 px-4 py-2 bg-white text-zinc-900 border border-zinc-300 rounded-lg outline-none"
-                        placeholder="Digite sua senha"
-                        type="password"
-                        name="password"
                     />
                 </div>
 
                 <button    
                     type="submit"
                     class="px-8 py-2 bg-purple-700 text-white rounded-lg font-bold"
-                    >Entrar
+                    >Enviar email
                 </button>
             </form>
-            <a href="/forgot-password" class="text-purple-700 font-medium">Esqueceu a senha?</a>
-            
+
         </div>
         <div class="w-full lg:w-2/3 mt-8 lg:mt-0">
             <img
                 alt="Hero"
-                src="https://image.cdn2.seaart.me/2023-11-08/22128187776449541/458ab5ce4d6312eab68799b824ba4f2642e50c0a_high.webp"
+                src="https://aiwallpaperarts.com/static/images/wallpapers/original/3026879.jpg"
                 class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 height="550"
                 width="550"
