@@ -1,5 +1,52 @@
 <script>
+    import { goto } from "$app/navigation";
     import { IconMusic } from "@tabler/icons-svelte";
+
+    let name = $state('');
+    let email = $state('');
+    let password = $state('');
+
+    async function handleSubmit(event) {
+        // Impede o comportamento padrão do formulário
+        event.preventDefault();
+
+        // console.log(JSON.stringify({user: { email, password }})); // Debug para verificar os valores
+        try {
+            const response = await fetch("http://localhost:3000/signup", {
+                method: "POST",
+                body: JSON.stringify({ 
+                    user: { 
+                        name,
+                        email, 
+                        password 
+                }}),
+                headers: { "Content-Type": "application/json" },
+            });
+
+            if (!response.ok) {
+                throw new Error('Signup failed. Please check your infos.');
+            }
+
+            const loginData = await response.json();
+            const authHeader = response.headers.get('Authorization')
+            console.log(loginData.message, authHeader);
+
+            if (authHeader && authHeader.startsWith("Bearer ")) {
+                // Armazenar o token e os dados do usuário no LocalStorage
+                localStorage.setItem("authToken", authHeader);
+                localStorage.setItem("user", JSON.stringify(loginData.data.user));
+
+                alert('Entrou com sucesso!')
+                goto('/dashboard')
+            } else {
+                throw new Error("Token de autenticação não encontrado.");
+            }
+        } catch (error) {
+            console.error("Login error:", error.message);
+            // Display error message to the user
+            alert(error.message);
+        }
+    }
 </script>
 
 <div
@@ -19,7 +66,7 @@
             </a>
             <span class="text-xl">Cadastre-se no Repertoire!</span>
             <a href="/login" class="text-purple-900 font-medium">Caso já tenha uma conta, faça seu login por aqui.</a>
-            <form class="mt-6 flex flex-col gap-3">
+            <form on:submit={handleSubmit} class="mt-6 flex flex-col gap-3">
 
                 <div class="flex flex-col gap-1">
                     <label for="name" class="text-md text-purple-800 font-medium">Nome:</label>
@@ -28,6 +75,7 @@
                         placeholder="Digite seu nome"
                         type="text"
                         name="name"
+                        bind:value={name}
                     />
                 </div>
                 <div class="flex flex-col gap-1">
@@ -37,6 +85,7 @@
                         placeholder="Digite seu email"
                         type="email"
                         name="email"
+                        bind:value={email}
                     />
                 </div>
                 <div class="flex flex-col gap-1">
@@ -46,6 +95,7 @@
                         placeholder="Digite sua senha"
                         type="password"
                         name="password"
+                        bind:value={password}
                     />
                 </div>
 

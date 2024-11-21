@@ -13,24 +13,4 @@
         font-family: "Familjen Grotesk", sans-serif;
         scroll-behavior: smooth;
     }
-
-    /* :global(h1::selection) {
-        background-color: #9333ea;
-    }
-
-    :global(h2::selection) {
-        background-color: #9333ea;
-    }
-
-    :global(h3::selection) {
-        background-color: #9333ea;
-    }
-
-    :global(p::selection) {
-        background-color: #9333ea;
-    }
-
-    :global(span::selection) {
-        background-color: #9333ea;
-    } */
 </style>
