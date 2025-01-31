@@ -11,7 +11,7 @@
         }
         try {
             const response = await fetch(
-                "http://repertoire-api.fly.dev/logout",
+                "https://repertoire-api.fly.dev/logout",
                 {
                     method: "DELETE",
                     headers: {

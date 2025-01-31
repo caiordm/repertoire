@@ -13,7 +13,7 @@
         // console.log(JSON.stringify({user: { email, password }})); // Debug para verificar os valores
         try {
             const response = await fetch(
-                "http://repertoire-api.fly.dev/signup",
+                "https://repertoire-api.fly.dev/signup",
                 {
                     method: "POST",
                     body: JSON.stringify({
@@ -33,7 +33,7 @@
 
             const loginData = await response.json();
             const authHeader = response.headers.get("Authorization");
-            console.log(loginData.message, authHeader);
+            // console.log(loginData.message, authHeader);
 
             if (authHeader && authHeader.startsWith("Bearer ")) {
                 // Armazenar o token e os dados do usuário no LocalStorage
@@ -51,7 +51,7 @@
         } catch (error) {
             console.error("Login error:", error.message);
             // Display error message to the user
-            alert(error.message);
+            alert(`Não conseguimos efetuar seu cadastro: ${error.message}`);
         }
     }
 </script>
@@ -81,7 +81,7 @@
             <a href="/login" class="text-purple-900 font-medium"
                 >Caso já tenha uma conta, faça seu login por aqui.</a
             >
-            <form on:submit={handleSubmit} class="mt-6 flex flex-col gap-3">
+            <form onsubmit={handleSubmit} class="mt-6 flex flex-col gap-3">
                 <div class="flex flex-col gap-1">
                     <label
                         for="name"
