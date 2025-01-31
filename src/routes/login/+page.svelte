@@ -3,8 +3,8 @@
     import { goto } from "$app/navigation";
     import { IconMusic } from "@tabler/icons-svelte";
 
-    let email = $state('');
-    let password = $state('');
+    let email = $state("");
+    let password = $state("");
 
     async function handleSubmit(event) {
         // Impede o comportamento padrão do formulário
@@ -12,31 +12,40 @@
 
         // console.log(JSON.stringify({user: { email, password }})); // Debug para verificar os valores
         try {
-            const response = await fetch("http://localhost:3000/login", {
-                method: "POST",
-                body: JSON.stringify({ 
-                    user: { 
-                        email, 
-                        password 
-                }}),
-                headers: { "Content-Type": "application/json" },
-            });
+            const response = await fetch(
+                "http://repertoire-api.fly.dev/login",
+                {
+                    method: "POST",
+                    body: JSON.stringify({
+                        user: {
+                            email,
+                            password,
+                        },
+                    }),
+                    headers: { "Content-Type": "application/json" },
+                },
+            );
 
             if (!response.ok) {
-                throw new Error('Login failed. Please check your email and password.');
+                throw new Error(
+                    "Login failed. Please check your email and password.",
+                );
             }
 
             const loginData = await response.json();
-            const authHeader = response.headers.get('Authorization')
+            const authHeader = response.headers.get("Authorization");
             console.log(loginData.message, authHeader);
 
             if (authHeader && authHeader.startsWith("Bearer ")) {
                 // Armazenar o token e os dados do usuário no LocalStorage
                 localStorage.setItem("authToken", authHeader);
-                localStorage.setItem("user", JSON.stringify(loginData.data.user));
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(loginData.data.user),
+                );
 
-                alert('Entrou com sucesso!')
-                goto('/dashboard')
+                alert("Entrou com sucesso!");
+                goto("/dashboard");
             } else {
                 throw new Error("Token de autenticação não encontrado.");
             }
@@ -46,7 +55,6 @@
             alert(error.message);
         }
     }
-
 </script>
 
 <div
@@ -77,10 +85,7 @@
                 >Não tem uma conta ainda? Crie agora.</a
             >
 
-            <form
-                on:submit={handleSubmit}
-                class="mt-6 flex flex-col gap-4"
-            >
+            <form on:submit={handleSubmit} class="mt-6 flex flex-col gap-4">
                 <div class="flex flex-col gap-1">
                     <label
                         for="email"
