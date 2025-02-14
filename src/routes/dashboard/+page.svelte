@@ -246,7 +246,14 @@
 <DashHeader name={localUser.name} />
 <section class="p-4 lg:p-6">
   {#if repertoires.length === 0}
-    <h1 class="text-xl lg:text-3xl">Nenhum repertório por aqui ainda...</h1>
+  <div class="flex items-center justify-between">
+      <h1 class="text-xl lg:text-3xl">Nenhum repertório por aqui ainda...</h1>
+      <button
+        onclick={() => (showCreateModal = true)}
+        class="mt-4 flex gap-1 items-center bg-green-700 text-white px-4 py-2 rounded"
+        >Novo repertório <IconPlus /></button
+      >
+    </div>
   {:else}
     <div class="flex items-center justify-between">
       <h1 class="text-xl lg:text-3xl">Seus Repertórios</h1>
