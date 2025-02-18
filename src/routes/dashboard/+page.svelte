@@ -1,7 +1,7 @@
 <script>
   import { goto } from "$app/navigation";
   import DashHeader from "$lib/DashHeader.svelte";
-  import { IconPlus, IconTrash, IconX } from "@tabler/icons-svelte";
+  import { IconFile, IconFile3d, IconPdf, IconPlus, IconTrash, IconX } from "@tabler/icons-svelte";
   import { onMount } from "svelte";
 
   let localUser = JSON.parse(localStorage.getItem("user") || {});
@@ -241,6 +241,39 @@
       alert(`Catch error: ${error.message}`);
     }
   }
+
+  async function gerarPdf(id) {
+    let token = localStorage.getItem("authToken");
+
+    try {
+      const response = await fetch(
+        `https://repertoire-api.fly.dev/repertoire/${id}/pdf`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `${token}`,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Erro na requisição: ${response.status}`);
+      }
+
+      // Converter a resposta para um Blob (formato binário do PDF)
+      const blob = await response.blob();
+
+      // Criar um URL temporário para o PDF
+      const url = URL.createObjectURL(blob);
+
+      // Abrir o PDF em uma nova aba/janela
+      window.open(url, "_blank");
+
+    } catch (error) {
+      console.error("Erro ao gerar PDF:", error.message);
+      alert(`Catch error: ${error.message}`);
+    }
+  }
 </script>
 
 <DashHeader name={localUser.name} />
@@ -306,6 +339,11 @@
           </div>
         </div>
         <div class="flex items-center justify-center gap-2">
+          <button
+              onclick={() => gerarPdf(selectedRepertoire.repertoire.id)}
+              class="flex gap-1 items-center bg-green-700 text-white px-4 py-2 rounded"
+              >Gerar pdf <IconFile3d /></button
+          >
           <button
             onclick={() => deleteRepertoire(selectedRepertoire.repertoire.id)}
             aria-label="Delete"
