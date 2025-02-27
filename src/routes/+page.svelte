@@ -91,12 +91,7 @@
                 </div>
                 <div class="flex flex-col items-center text-center space-y-4">
                     <IconPdf class="h-12 w-12 text-primary" />
-                    <h3 class="text-xl font-bold">
-                        Exportação de PDF <strong
-                            class="ml-2 font-bold text-sm bg-purple-100 text-purple-600 p-2 rounded-md"
-                            >em breve...</strong
-                        >
-                    </h3>
+                    <h3 class="text-xl font-bold">Exportação de PDF</h3>
                     <p class="text-gray-500">
                         Gere um PDF para o seu repertório com um único clique.
                     </p>
@@ -132,8 +127,7 @@
                         1. Adicione Suas Músicas
                     </h3>
                     <p class="text-gray-600">
-                        Input your musical pieces with details like composer,
-                        genre, and difficulty.
+                        Insira suas performances e músicas com informações como tom, link etc.
                     </p>
                 </div>
                 <div class="flex flex-col items-center text-center">
@@ -144,8 +138,7 @@
                         2. Organize & Gerencie
                     </h3>
                     <p class="text-gray-600">
-                        Create custom lists, tag pieces, and track your
-                        progress.
+                        Crie listas e repertórios personalizados e acompanhe sua trajetória
                     </p>
                 </div>
                 <div class="flex flex-col items-center text-center">

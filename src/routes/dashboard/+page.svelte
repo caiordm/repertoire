@@ -341,8 +341,8 @@
         <div class="flex items-center justify-center gap-2">
           <button
               onclick={() => gerarPdf(selectedRepertoire.repertoire.id)}
-              class="flex gap-1 items-center bg-green-700 text-white px-4 py-2 rounded"
-              >Gerar pdf <IconFile3d /></button
+              class="flex gap-1 items-center text-green-700 px-4 py-2 rounded"
+              >Gerar pdf <IconFile3d color="#15803d"/></button
           >
           <button
             onclick={() => deleteRepertoire(selectedRepertoire.repertoire.id)}
@@ -472,7 +472,7 @@
           >
           <input
             class="max-w-full flex-1 px-4 py-2 bg-white text-zinc-900 border border-zinc-300 rounded-lg outline-none"
-            placeholder="ex: Simplesmente Roupa Nova"
+            placeholder="ex: We Are The World"
             type="text"
             name="name"
             bind:value={name}
@@ -500,7 +500,7 @@
           >
           <input
             class="max-w-full flex-1 px-4 py-2 bg-white text-zinc-900 border border-zinc-300 rounded-lg outline-none"
-            placeholder="ex: linka O Disco"
+            placeholder="ex: Link do Youtube"
             type="text"
             name="link"
             bind:value={link}
